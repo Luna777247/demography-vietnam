@@ -1,0 +1,9 @@
+Tạo notebook Phân tích mối tương quan giữa tăng trưởng kinh tế và tỷ lệ sinh – chết – di cư ở Việt Nam (1995–2024) → Dùng dữ liệu Thu nhập bình quân, Tỷ suất sinh thô, Tỷ suất di cư thuần để kiểm tra xem kinh tế phát triển ảnh hưởng thế nào đến cấu trúc dân số, dữ liệu lấy từ D:\project\vietnam-population-explorer\data\processed, từ đầu đến cuối, nếu data miss thì điền bằng ngoại sinh , hoặc xem tương quan điền, ...
+
+Tạo file mới phân tích và xử lý dữ liệu D:\project\vietnam-population-explorer\data\processed
+
+https://www.worldometers.info/9world-population/vietnam-population/ 
+
+Thuyết trình: 
+- cho vào slide thì phải giải thích được
+- có tổng kết

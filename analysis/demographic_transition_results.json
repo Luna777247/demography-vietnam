@@ -1,0 +1,126 @@
+{
+  "correlation_matrix": {
+    "Fertility Rate": {
+      "Fertility Rate": 1.0,
+      "Death Rate": 0.642,
+      "Median Age": -0.806,
+      "Urban Pop %": -0.859,
+      "Natural Increase Rate": -0.154
+    },
+    "Death Rate": {
+      "Fertility Rate": 0.642,
+      "Death Rate": 1.0,
+      "Median Age": -0.069,
+      "Urban Pop %": -0.163,
+      "Natural Increase Rate": -0.214
+    },
+    "Median Age": {
+      "Fertility Rate": -0.806,
+      "Death Rate": -0.069,
+      "Median Age": 1.0,
+      "Urban Pop %": 0.944,
+      "Natural Increase Rate": -0.906
+    },
+    "Urban Pop %": {
+      "Fertility Rate": -0.859,
+      "Death Rate": -0.163,
+      "Median Age": 0.944,
+      "Urban Pop %": 1.0,
+      "Natural Increase Rate": -0.871
+    },
+    "Natural Increase Rate": {
+      "Fertility Rate": -0.154,
+      "Death Rate": -0.214,
+      "Median Age": -0.906,
+      "Urban Pop %": -0.871,
+      "Natural Increase Rate": 1.0
+    }
+  },
+  "change_rates": {
+    "Fertility Rate": -0.05228571428571429,
+    "Death Rate": NaN,
+    "Median Age": 0.16285714285714284,
+    "Urban Pop %": 0.40428571428571425
+  },
+  "regression_summary": "                            OLS Regression Results                            \n==============================================================================\nDep. Variable:             Median Age   R-squared:                       0.890\nModel:                            OLS   Adj. R-squared:                  0.876\nMethod:                 Least Squares   F-statistic:                     60.93\nDate:                Wed, 22 Oct 2025   Prob (F-statistic):           6.29e-08\nTime:                        11:02:34   Log-Likelihood:                -37.525\nNo. Observations:                  18   AIC:                             81.05\nDf Residuals:                      15   BIC:                             83.72\nDf Model:                           2                                         \nCovariance Type:            nonrobust                                         \n==================================================================================\n                     coef    std err          t      P>|t|      [0.025      0.975]\n----------------------------------------------------------------------------------\nconst              7.9288      4.642      1.708      0.108      -1.966      17.824\nFertility Rate     0.0612      0.566      0.108      0.915      -1.144       1.267\nUrban Pop %        0.6005      0.105      5.736      0.000       0.377       0.824\n==============================================================================\nOmnibus:                       12.258   Durbin-Watson:                   0.406\nProb(Omnibus):                  0.002   Jarque-Bera (JB):                9.702\nSkew:                           1.375   Prob(JB):                      0.00782\nKurtosis:                       5.318   Cond. No.                         267.\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.",
+  "forecast_years": [
+    2026,
+    2027,
+    2028,
+    2029,
+    2030,
+    2031,
+    2032,
+    2033,
+    2034,
+    2035
+  ],
+  "forecast_median_age": [
+    32.89870418119908,
+    33.898893648085206,
+    34.89908311497133,
+    35.89927258185745,
+    36.89946204874357,
+    37.8996515156297,
+    38.899840982515826,
+    39.900030449401946,
+    40.90021991628807,
+    41.90040938317419
+  ],
+  "statistics_summary": {
+    "count": {
+      "Fertility Rate": 18.0,
+      "Death Rate": 7.0,
+      "Median Age": 18.0,
+      "Urban Pop %": 18.0
+    },
+    "mean": {
+      "Fertility Rate": 3.47,
+      "Death Rate": 6.06,
+      "Median Age": 24.31,
+      "Urban Pop %": 26.93
+    },
+    "std": {
+      "Fertility Rate": 1.79,
+      "Death Rate": 0.57,
+      "Median Age": 6.05,
+      "Urban Pop %": 9.66
+    },
+    "min": {
+      "Fertility Rate": 1.88,
+      "Death Rate": 5.3,
+      "Median Age": 17.2,
+      "Urban Pop %": 13.1
+    },
+    "25%": {
+      "Fertility Rate": 1.92,
+      "Death Rate": 5.67,
+      "Median Age": 19.05,
+      "Urban Pop %": 19.75
+    },
+    "50%": {
+      "Fertility Rate": 2.4,
+      "Death Rate": 6.06,
+      "Median Age": 22.35,
+      "Urban Pop %": 24.25
+    },
+    "75%": {
+      "Fertility Rate": 5.35,
+      "Death Rate": 6.45,
+      "Median Age": 30.55,
+      "Urban Pop %": 36.58
+    },
+    "max": {
+      "Fertility Rate": 6.27,
+      "Death Rate": 6.8,
+      "Median Age": 33.4,
+      "Urban Pop %": 41.4
+    }
+  },
+  "conclusions": {
+    "transition_speed": "Nhanh hơn nhiều nước công nghiệp hóa khác",
+    "fertility_decline": "Tỷ suất sinh giảm từ 6.2 xuống 1.8 trẻ/phụ nữ trong 70 năm",
+    "age_increase": "Tuổi trung bình tăng từ 19.8 lên 33.2 tuổi",
+    "urbanization_increase": "Đô thị hóa tăng từ 15.4% lên 40.1%"
+  }
+}
