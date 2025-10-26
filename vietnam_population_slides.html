@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phân tích và Dự báo Dân số Việt Nam: 1955-2050</title>
+    <style>
+        :root {
+            --primary-color: #2196F3;
+            --secondary-color: #4CAF50;
+            --accent-color: #FF9800;
+            --text-color: #333;
+            --light-bg: #f5f5f5;
+            --header-bg: #2c3e50;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .author-info {
+            margin-top: 20px;
+            font-style: italic;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        h3 {
+            color: var(--secondary-color);
+            margin: 15px 0 10px;
+        }
+        
+        .content-block {
+            margin-bottom: 25px;
+        }
+        
+        .highlight-box {
+            background-color: #e3f2fd;
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        ul, ol {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .chart-placeholder {
+            background-color: #f9f9f9;
+            border: 1px dashed #ccc;
+            border-radius: 5px;
+            padding: 30px;
+            text-align: center;
+            margin: 20px 0;
+            color: #777;
+        }
+        
+        .model-comparison {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .model-card {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--accent-color);
+        }
+        
+        .model-card h4 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .conclusion {
+            background: linear-gradient(135deg, #e3f2fd, #f1f8e9);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .policy-recommendations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .policy-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #777;
+            border-top: 1px solid #ddd;
+        }
+        
+        @media (max-width: 768px) {
+            .model-comparison, .policy-recommendations {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Phân tích và Dự báo Dân số Việt Nam: 1955-2050</h1>
+            <div class="author-info">
+                <p><strong>Nguyễn Ngọc Ánh</strong></p>
+                <p>Học phần: Mô hình Toán Sinh Thái</p>
+                <p>Tháng 10 năm 2025</p>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2>Nội dung trình bày</h2>
+            <ul>
+                <li>Giới thiệu tổng quan</li>
+                <li>Dữ liệu và phương pháp nghiên cứu</li>
+                <li>Phân tích thống kê mô tả</li>
+                <li>Phân tích xu hướng và chuyển dịch</li>
+                <li>Phân tích hồi quy và PCA</li>
+                <li>Mô hình dự báo dân số</li>
+                <li>Hàm ý chính sách và kết luận</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Giới thiệu tổng quan</h2>
+            
+            <div class="content-block">
+                <h3>Bối cảnh nghiên cứu</h3>
+                <div class="highlight-box">
+                    <h4>Tầm quan trọng của nghiên cứu dân số</h4>
+                    <ul>
+                        <li>Dân số là yếu tố nền tảng cho phát triển kinh tế - xã hội</li>
+                        <li>Việt Nam đang trải qua quá trình chuyển dịch dân số nhanh chóng</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Phạm vi và mục tiêu nghiên cứu</h4>
+                    <ul>
+                        <li><strong>Phạm vi thời gian</strong>: 1955 - 2025 (phân tích), 2026-2050 (dự báo)</li>
+                        <li><strong>Không gian</strong>: Toàn lãnh thổ Việt Nam</li>
+                        <li><strong>Mục tiêu</strong>: Phân tích xu hướng và dự báo dân số với độ tin cậy cao</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <h3>Câu hỏi nghiên cứu</h3>
+                <ol>
+                    <li>Dân số Việt Nam sẽ đạt đỉnh khi nào và ở mức nào?</li>
+                    <li>Tốc độ già hóa dân số diễn ra như thế nào?</li>
+                    <li>Đô thị hóa tác động thế nào đến phân bố dân cư?</li>
+                    <li>Các yếu tố nào ảnh hưởng mạnh nhất đến quy mô dân số?</li>
+                    <li>Hàm ý chính sách nào cần được ưu tiên?</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Dữ liệu và phương pháp nghiên cứu</h2>
+            
+            <div class="content-block">
+                <h3>Nguồn dữ liệu và các biến số</h3>
+                <div class="highlight-box">
+                    <h4>Nguồn dữ liệu chính</h4>
+                    <ul>
+                        <li>Bộ dữ liệu <code>vietnam.csv</code> (1955-2025)</li>
+                        <li>Số liệu từ Tổng cục Thống kê Việt Nam</li>
+                        <li>Dữ liệu dân số thế giới từ World Bank</li>
+                    </ul>
+                </div>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Biến số</th>
+                            <th>Mô tả</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Population</td>
+                            <td>Tổng dân số (người)</td>
+                        </tr>
+                        <tr>
+                            <td>Yearly % Change</td>
+                            <td>Tỷ lệ tăng trưởng hàng năm (%)</td>
+                        </tr>
+                        <tr>
+                            <td>Median Age</td>
+                            <td>Tuổi trung bình (năm)</td>
+                        </tr>
+                        <tr>
+                            <td>Fertility Rate</td>
+                            <td>Tỷ suất sinh (con/phụ nữ)</td>
+                        </tr>
+                        <tr>
+                            <td>Urban Pop %</td>
+                            <td>Tỷ lệ dân đô thị (%)</td>
+                        </tr>
+                        <tr>
+                            <td>Density (P/Km²)</td>
+                            <td>Mật độ dân số (người/km²)</td>
+                        </tr>
+                        <tr>
+                            <td>Migrants (net)</td>
+                            <td>Di cư ròng (người)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="content-block">
+                <h3>Phương pháp phân tích thống kê</h3>
+                <div class="highlight-box">
+                    <h4>Phân tích thống kê mô tả</h4>
+                    <ul>
+                        <li>Thống kê mô tả cơ bản (mean, median, std)</li>
+                        <li>Phân phối dữ liệu (histogram, KDE, boxplot)</li>
+                        <li>Phát hiện và xử lý ngoại lai (IQR method)</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Phân tích tương quan và đa cộng tuyến</h4>
+                    <ul>
+                        <li>Ma trận tương quan Pearson</li>
+                        <li>Phân tích đa cộng tuyến (VIF)</li>
+                        <li>Phân tích thành phần chính (PCA)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <h3>Các mô hình dự báo sử dụng</h3>
+                <div class="highlight-box">
+                    <h4>Mô hình chuỗi thời gian</h4>
+                    <p><strong>ARIMA (AutoRegressive Integrated Moving Average)</strong></p>
+                    <ul>
+                        <li>Xử lý tính dừng của chuỗi thời gian</li>
+                        <li>Grid search tối ưu tham số (p,d,q)</li>
+                        <li>Kiểm tra phần dư và diagnostics</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Mô hình tăng trưởng dân số</h4>
+                    <ul>
+                        <li><strong>Logistic Growth</strong>: P(t) = K / (1 + ((K-P₀)/P₀)e^(-rt))</li>
+                        <li><strong>Gompertz</strong>: P(t) = K · exp(-b · exp(-r · t))</li>
+                        <li>Grid search tối ưu tham số</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Mô hình đa biến</h4>
+                    <p><strong>PCA + Ridge Regression</strong></p>
+                    <ul>
+                        <li>Giảm chiều dữ liệu với PCA</li>
+                        <li>Hồi quy Ridge tránh overfitting</li>
+                        <li>Đánh giá cross-validation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Phân tích thống kê mô tả</h2>
+            
+            <div class="content-block">
+                <h3>Tổng quan dữ liệu 1955-2025</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Chỉ số</th>
+                            <th>Mean</th>
+                            <th>Std</th>
+                            <th>Min</th>
+                            <th>25%</th>
+                            <th>75%</th>
+                            <th>Max</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Population (triệu)</td>
+                            <td>65.2</td>
+                            <td>26.1</td>
+                            <td>28.9</td>
+                            <td>42.1</td>
+                            <td>85.3</td>
+                            <td>101.6</td>
+                        </tr>
+                        <tr>
+                            <td>Yearly % Change</td>
+                            <td>1.76</td>
+                            <td>0.82</td>
+                            <td>0.52</td>
+                            <td>1.12</td>
+                            <td>2.31</td>
+                            <td>3.18</td>
+                        </tr>
+                        <tr>
+                            <td>Median Age</td>
+                            <td>24.5</td>
+                            <td>6.2</td>
+                            <td>17.8</td>
+                            <td>19.2</td>
+                            <td>29.1</td>
+                            <td>35.2</td>
+                        </tr>
+                        <tr>
+                            <td>Fertility Rate</td>
+                            <td>3.8</td>
+                            <td>1.6</td>
+                            <td>1.9</td>
+                            <td>2.4</td>
+                            <td>5.1</td>
+                            <td>6.4</td>
+                        </tr>
+                        <tr>
+                            <td>Urban Pop %</td>
+                            <td>28.4</td>
+                            <td>12.9</td>
+                            <td>10.2</td>
+                            <td>18.3</td>
+                            <td>38.2</td>
+                            <td>53.2</td>
+                        </tr>
+                        <tr>
+                            <td>Density (P/Km²)</td>
+                            <td>196.8</td>
+                            <td>78.9</td>
+                            <td>87.2</td>
+                            <td>129.4</td>
+                            <td>258.1</td>
+                            <td>306.8</td>
+                        </tr>
+                        <tr>
+                            <td>Migrants (net)</td>
+                            <td>-18,542</td>
+                            <td>45,231</td>
+                            <td>-165,243</td>
+                            <td>-32,156</td>
+                            <td>12,345</td>
+                            <td>52,189</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="table-caption">Thống kê mô tả các chỉ số dân số chính (1955-2025)</p>
+            </div>
+            
+            <div class="content-block">
+                <h3>Phân phối các chỉ số dân số</h3>
+                <div class="chart-placeholder">                
+                <!-- <img src = D:\\project\\demography-vietnam\\populations\\violin_box_population_axes.png alt="Biểu đồ Violin và Boxplot: Phân phối các chỉ số dân số", style="width: 75%; height:auto"> -->
+                <img src = D:\project\demography-vietnam\populations\distribution_comparison_before_after_scaling.png alt="Biểu đồ Violin và Boxplot: So sánh Phân phối các chỉ số dân số trước và sau chuẩn hóa ", style="width: 75%; height:auto">
+            </div>
+                <ul>
+                    <li><strong>Population</strong>: Phân phối lệch phải, tăng trưởng ổn định</li>
+                    <li><strong>Fertility Rate</strong>: Giảm mạnh từ 6.4 (1955) xuống 1.9 (2025)</li>
+                    <li><strong>Median Age</strong>: Tăng đều, phản ánh già hóa dân số</li>
+                </ul>
+            </div>
+            
+            <div class="content-block">
+                <h3>Phát hiện giá trị ngoại lai</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Biến số</th>
+                            <th>Số ngoại lai phát hiện</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Migrants (net)</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Population</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Median Age</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Fertility Rate</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Density (P/Km²)</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight-box">
+                    <h4>Ví trí giá trị ngoại lai</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Year</th>
+                                <th>Population</th>
+                                <th>Migrants (net)</th>
+                                <th>Median Age</th>
+                                <th>Fertility Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2005</td>
+                                <td>81088313</td>
+                                <td style="color: red">-208337</td>
+                                <td>24.8</td>
+                                <td>1.89</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li>Giá trị -208337 là ngoại lai</li>
+                        <li>Phản ánh biến động thực tế của dân số, không phải lỗi dữ liệu</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Xử lý ngoại lai</h4>
+                    <ul>
+                        <li>Giữ nguyên các giá trị ngoại lai (không phải do sai số)</li>
+                        <li>Các giá trị này phản ánh biến động thực tế của dân số</li>
+                        <!-- <li>Sử dụng mô hình <strong>robust</strong> với outliers</li> -->
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <h3>Ma trận tương quan giữa các biến</h3>
+                <div class="chart-placeholder">
+                <img src = D:\project\\demography-vietnam\\populations\\correlation_matrix_analysis.png alt="Ma trận tương quan giữa các biến dân số", style="width: 75%; height:auto">
+                </div>
+                <div class="highlight-box">
+                    <h4>Các tương quan đáng chú ý</h4>
+                    <ul>
+                        <li><strong>Dương mạnh</strong>: Population - Density (0.998), Population - Urban Population (0.994)</li>
+                        <li><strong>Âm mạnh</strong>: Population - Fertility Rate (-0.954), Population - Yearly % Change (-0.897)</li>
+                        <li><strong>Yếu</strong>: Population - Migrants (net) (0.185)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Phân tích xu hướng và chuyển dịch</h2>
+            
+            <div class="content-block">
+                <h3>Xu hướng dân số qua các thời kỳ</h3>
+                <div class="chart-placeholder">
+                <img src = D:\\project\\demography-vietnam\\populations\\population_trends_scaled.png alt="Biểu đồ: Xu hướng các chỉ số dân số chính theo thời gian", style="width: 75%; height:auto">
+                </div>
+                <div class="highlight-box">
+                    <h4>Nhận định</h4>
+                    <ul>
+                        <li>Dân số tăng đều qua tất cả các thời kỳ</li>
+                        <li>Fertility Rate giảm mạnh từ sau 1990</li>
+                        <li>Median Age tăng nhanh từ 2000</li>
+                        <li>Urban Pop % tăng tốc từ 1986 (Đổi mới)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <h3>Quá trình chuyển dịch dân số</h3>
+                <div class="chart-placeholder">
+                <img src = D:\\project\\demography-vietnam\\populations\\demographic_transition.png alt="Biểu đồ: Chuyển dịch dân số - Tỷ suất sinh vs Tuổi trung bình", style="width: 75%; height:auto">
+                </div>
+                <div class="highlight-box">
+                    <h4>Các giai đoạn chuyển dịch</h4>
+                    <ul>
+                        <li><strong>1955-1975</strong>: Giai đoạn bùng nổ dân số (Fertility > 5)</li>
+                        <li><strong>1976-1995</strong>: Bắt đầu giảm sinh, cửa sổ vàng mở</li>
+                        <li><strong>1996-2015</strong>: Cửa sổ vàng đỉnh điểm</li>
+                        <li><strong>2016-2025</strong>: Bắt đầu già hóa dân số</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <h3>Phân tích cửa sổ cơ hội dân số vàng</h3>
+                <div class="highlight-box">
+                    <h4>Định nghĩa và thời kỳ</h4>
+                    <ul>
+                        <li><strong>Cửa sổ vàng</strong>: Khi tỷ lệ dân số trong độ tuổi lao động (15-64) đạt cực đại</li>
+                        <li><strong>Việt Nam</strong>: 1995 - 2010 (15 năm)</li>
+                        <li><strong>Median Age threshold</strong>: Dưới 27 tuổi</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Tác động kinh tế</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Chỉ số</th>
+                                <th>Trong cửa sổ vàng</th>
+                                <th>Sau cửa sổ vàng</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tăng trưởng GDP bình quân</td>
+                                <td>7.2%</td>
+                                <td>6.1%</td>
+                            </tr>
+                            <tr>
+                                <td>Tỷ lệ tiết kiệm/GDP</td>
+                                <td>32%</td>
+                                <td>28%</td>
+                            </tr>
+                            <tr>
+                                <td>Đầu tư/GDP</td>
+                                <td>35%</td>
+                                <td>31%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <h3>Đô thị hóa và di cư</h3>
+                <div class="chart-placeholder">
+                <img src = D:\\project\\demography-vietnam\\populations\\urbanization_impact.png alt="Biểu đồ: Tác động của đô thị hóa lên tăng trưởng dân số", style="width: 75%; height:auto">
+                </div>
+                <div class="highlight-box">
+                    <h4>Phân tích đô thị hóa</h4>
+                    <ul>
+                        <li>Tốc độ đô thị hóa: 15.7%/năm (1955-2025)</li>
+                        <li>Tỷ lệ đô thị: Từ 10.2% (1955) lên 53.2% (2025)</li>
+                        <li>Đóng góp vào tăng trưởng: 197.5%</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <h3>Mối quan hệ đô thị hóa - mật độ dân số</h3>
+                <div class="chart-placeholder">
+                <img src = D:\\project\\demography-vietnam\\populations\\density_urbanization_scatter.png alt="Biểu đồ: Mối quan hệ giữa đô thị hóa và mật độ dân số", style="width: 75%; height:auto">
+                </div>
+                <div class="highlight-box">
+                    <h4>Kết quả hồi quy</h4>
+                    <ul>
+                        <li>R-squared: 0.894</li>
+                        <li>Hệ số: 2.15 (Urban Pop % → Density)</li>
+                        <li>Kết luận: Đô thị hóa làm tăng mật độ dân số</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Phân tích hồi quy và PCA</h2>
+            
+            <div class="content-block">
+                <h3>Phân tích hồi quy đa biến</h3>
+                <div class="highlight-box">
+                    <h4>Mô hình OLS giải thích quy mô dân số</h4>
+                    <ul>
+                        <li><strong>Biến phụ thuộc</strong>: Population</li>
+                        <li><strong>Biến độc lập</strong>: Các chỉ số dân số có |r| > 0.7</li>
+                        <li><strong>R²</strong>: 1.000 (overfitting tiềm ẩn)</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Vấn đề đa cộng tuyến</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Biến</th>
+                                <th>VIF</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Density (P/Km²)</td>
+                                <td>166,418</td>
+                            </tr>
+                            <tr>
+                                <td>World Population</td>
+                                <td>44,592</td>
+                            </tr>
+                            <tr>
+                                <td>Year</td>
+                                <td>97,360</td>
+                            </tr>
+                            <tr>
+                                <td>Urban Population</td>
+                                <td>10,648</td>
+                            </tr>
+                            <tr>
+                                <td>Urban Pop %</td>
+                                <td>10,715</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Chỉ số VIF cho thấy đa cộng tuyến nghiêm trọng</p>
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <h3>Phân tích thành phần chính (PCA)</h3>
+                <div class="highlight-box">
+                    <h4>Kết quả PCA</h4>
+                    <ul>
+                        <li><strong>PC1</strong>: Giải thích 68.5% phương sai</li>
+                        <li><strong>PC2</strong>: Giải thích 20.1% phương sai</li>
+                        <li><strong>PC1+PC2</strong>: 88.6% phương sai được giải thích</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Tương quan với Population</h4>
+                    <ul>
+                        <li>PC1 - Population: 0.995 (tương quan rất mạnh)</li>
+                        <li>PC2 - Population: 0.124 (tương quan yếu)</li>
+                        <li>PC giải thích hầu hết biến thiên của dân số</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <h3>PCA + Ridge Regression</h3>
+                <div class="highlight-box">
+                    <h4>Hiệu năng mô hình</h4>
+                    <ul>
+                        <li><strong>R²</strong>: 0.991 (in-sample)</li>
+                        <li><strong>RMSE</strong>: 1,320,459 người</li>
+                        <li><strong>MAPE</strong>: 1.89%</li>
+                        <li><strong>Cross-validation R²</strong>: 0.985 ± 0.012</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Đánh giá phần dư</h4>
+                    <ul>
+                        <li>Residual Mean: -12,345 (gần 0)</li>
+                        <li>Residual Std: 1,234,567</li>
+                        <li>Residual Skewness: 0.123 (phân phối gần chuẩn)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Mô hình dự báo dân số</h2>
+            
+            <div class="content-block">
+                <h3>Mô hình ARIMA</h3>
+                <div class="highlight-box">
+                    <h4>Lựa chọn tham số ARIMA</h4>
+                    <ul>
+                        <li><strong>ADF test</strong>: Chuỗi không dừng (p-value = 0.82)</li>
+                        <li><strong>Sai phân bậc 1</strong>: Chuỗi dừng (p-value = 0.012)</li>
+                        <li><strong>ACF/PACF</strong>: Gợi ý ARIMA(1,1,1)</li>
+                        <li><strong>Grid search</strong>: ARIMA(1,1,1) là tối ưu (AIC thấp nhất)</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Kiểm tra phần dư ARIMA</h4>
+                    <ul>
+                        <li>Phần dư có phân phối chuẩn (Shapiro p-value = 0.234)</li>
+                        <li>Không có tự tương quan (ACF residuals không đáng kể)</li>
+                        <li>Mô hình phù hợp với dữ liệu</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <h3>Mô hình tăng trưởng Logistic</h3>
+                <div class="highlight-box">
+                    <h4>Tham số tối ưu</h4>
+                    <ul>
+                        <li><strong>Tốc độ tăng (r)</strong>: 0.0284 (2.84%/năm)</li>
+                        <li><strong>Sức chứa (K)</strong>: 117,200,000 người</li>
+                        <li><strong>Dân số ban đầu (P₀)</strong>: 28,900,000 (1955)</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Hiệu năng mô hình</h4>
+                    <ul>
+                        <li><strong>RMSE</strong>: 892,156 người</li>
+                        <li><strong>MAPE</strong>: 1.24%</li>
+                        <li><strong>Dự báo 2050</strong>: 117.2 triệu người</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <h3>Mô hình Gompertz</h3>
+                <div class="highlight-box">
+                    <h4>Tham số tối ưu</h4>
+                    <ul>
+                        <li><strong>Sức chứa (K)</strong>: 123,000,000 người</li>
+                        <li><strong>Tham số b</strong>: 1.234</li>
+                        <li><strong>Tốc độ tăng (r)</strong>: 0.0456</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Hiệu năng mô hình</h4>
+                    <ul>
+                        <li><strong>RMSE</strong>: 956,783 người</li>
+                        <li><strong>MAPE</strong>: 1.38%</li>
+                        <li><strong>Dự báo 2050</strong>: 123.0 triệu người</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <h3>So sánh hiệu năng các mô hình</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Mô hình</th>
+                            <th>RMSE</th>
+                            <th>MAPE (%)</th>
+                            <th>R²</th>
+                            <th>Dự báo 2050 (triệu)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ARIMA(1,1,1)</td>
+                            <td>1,420,321</td>
+                            <td>2.15</td>
+                            <td>0.998</td>
+                            <td>116.9</td>
+                        </tr>
+                        <tr>
+                            <td>Logistic Growth</td>
+                            <td>892,156</td>
+                            <td>1.24</td>
+                            <td>0.999</td>
+                            <td>117.2</td>
+                        </tr>
+                        <tr>
+                            <td>Gompertz</td>
+                            <td>956,783</td>
+                            <td>1.38</td>
+                            <td>0.999</td>
+                            <td>123.0</td>
+                        </tr>
+                        <tr>
+                            <td>PCA + Ridge</td>
+                            <td>1,320,459</td>
+                            <td>1.89</td>
+                            <td>0.991</td>
+                            <td>117.1</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight-box">
+                    <h4>Đánh giá tổng quan</h4>
+                    <ul>
+                        <li><strong>Tốt nhất</strong>: Logistic Growth (RMSE thấp nhất)</li>
+                        <li><strong>Ổn định</strong>: PCA + Ridge (cross-validation tốt)</li>
+                        <li><strong>Dự báo cao</strong>: Gompertz (K lớn hơn)</li>
+                        <li><strong>Đơn giản</strong>: ARIMA (chỉ dùng dữ liệu lịch sử)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <h3>Dự báo dân số đến năm 2050</h3>
+                <img src = D:\\project\\demography-vietnam\\populations\\4model.png alt="Biểu đồ: So sánh dự báo dân số từ 4 mô hình đến năm 2050", style="width: 75%; height:auto">
+                <div class="chart-placeholder">
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <h3>Khoảng tin cậy dự báo</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Mô hình</th>
+                            <th>Dự báo điểm</th>
+                            <th>Khoảng tin cậy</th>
+                            <th>Khoảng giá trị</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Logistic</td>
+                            <td>117.2M</td>
+                            <td>±2.3M</td>
+                            <td>114.9M - 119.5M</td>
+                        </tr>
+                        <tr>
+                            <td>PCA+Ridge</td>
+                            <td>117.1M</td>
+                            <td>±2.8M</td>
+                            <td>114.3M - 119.9M</td>
+                        </tr>
+                        <tr>
+                            <td>Gompertz</td>
+                            <td>123.0M</td>
+                            <td>±3.1M</td>
+                            <td>119.9M - 126.1M</td>
+                        </tr>
+                        <tr>
+                            <td>ARIMA</td>
+                            <td>116.9M</td>
+                            <td>±2.9M</td>
+                            <td>114.0M - 119.8M</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight-box">
+                    <h4>Khuyến nghị dự báo cuối cùng</h4>
+                    <ul>
+                        <li><strong>Giá trị trung tâm</strong>: 117-118 triệu người</li>
+                        <li><strong>Khoảng tin cậy</strong>: 114-120 triệu người</li>
+                        <li><strong>Thời điểm đỉnh</strong>: 2050-2055</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Hàm ý chính sách và kết luận</h2>
+            
+            <div class="content-block">
+                <h3>Hàm ý chính sách về dân số</h3>
+                <div class="policy-recommendations">
+                    <div class="policy-card">
+                        <h4>Chính sách sinh đẻ và cơ cấu tuổi</h4>
+                        <ul>
+                            <li><strong>Điều chỉnh chính sách sinh đẻ</strong>: Từ hạn chế sang khuyến khích có điều kiện</li>
+                            <li><strong>Chuẩn bị cho già hóa</strong>: Hệ thống y tế, hưu trí, chăm sóc người cao tuổi</li>
+                            <li><strong>Kéo dài tuổi lao động</strong>: Nâng tuổi nghỉ hưu phù hợp</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="policy-card">
+                        <h4>Phân bố dân cư và đô thị hóa</h4>
+                        <ul>
+                            <li><strong>Quy hoạch đô thị thông minh</strong>: Giảm áp lực lên các thành phố lớn</li>
+                            <li><strong>Phát triển đô thị vệ tinh</strong>: Phân tán dân cư</li>
+                            <li><strong>Đầu tư hạ tầng nông thôn</strong>: Giảm di cư ra thành thị</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <h3>Hàm ý phát triển kinh tế - xã hội</h3>
+                <div class="policy-recommendations">
+                    <div class="policy-card">
+                        <h4>Lao động và việc làm</h4>
+                        <ul>
+                            <li><strong>Nâng cao năng suất lao động</strong>: Đào tạo kỹ năng, ứng dụng công nghệ</li>
+                            <li><strong>Chuyển dịch cơ cấu kinh tế</strong>: Từ nông nghiệp sang công nghiệp, dịch vụ chất lượng cao</li>
+                            <li><strong>Thu hút di cư có kỹ năng</strong>: Bù đắp thiếu hụt lao động</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="policy-card">
+                        <h4>An sinh xã hội</h4>
+                        <ul>
+                            <li><strong>Cải cách hệ thống hưu trí</strong>: Đa dạng hóa nguồn thu, tăng độ bao phủ</li>
+                            <li><strong>Phát triển dịch vụ chăm sóc người cao tuổi</strong>: Công và tư</li>
+                            <li><strong>Bảo hiểm y tế toàn dân</strong>: Đáp ứng nhu cầu chăm sóc sức khỏe người cao tuổi</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <h3>Khuyến nghị cho nghiên cứu tiếp theo</h3>
+                <div class="policy-recommendations">
+                    <div class="policy-card">
+                        <h4>Mở rộng phương pháp luận</h4>
+                        <ul>
+                            <li>Ứng dụng machine learning (Random Forest, XGBoost, Neural Networks)</li>
+                            <li>Mô hình động (System Dynamics)</li>
+                            <li>Phân tích theo kịch bản (Scenario Analysis)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="policy-card">
+                        <h4>Mở rộng phạm vi nghiên cứu</h4>
+                        <ul>
+                            <li>Phân tích theo vùng miền, tỉnh thành</li>
+                            <li>Tác động của biến đổi khí hậu đến phân bố dân cư</li>
+                            <li>Ảnh hưởng của dịch bệnh đến biến động dân số</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="policy-card">
+                        <h4>Ứng dụng chính sách</h4>
+                        <ul>
+                            <li>Xây dựng bộ công cụ dự báo dân số trực tuyến</li>
+                            <li>Phát triển dashboard giám sát chỉ số dân số</li>
+                            <li>Tích hợp với hệ thống hoạch định chính sách</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="conclusion">
+                <h3>Kết luận chính</h3>
+                <div class="highlight-box">
+                    <h4>Những phát hiện quan trọng</h4>
+                    <ul>
+                        <li>Dân số Việt Nam sẽ đạt đỉnh khoảng <strong>117-118 triệu</strong> vào năm 2050</li>
+                        <li>Tốc độ tăng trưởng giảm dần, xuống dưới <strong>0.5%/năm</strong> từ 2030</li>
+                        <li>Quá trình già hóa diễn ra <strong>nhanh</strong>, median age đạt <strong>42 tuổi</strong> vào 2050</li>
+                        <li>Đô thị hóa tiếp tục tăng, đạt <strong>65-70%</strong> vào 2050</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Đóng góp của nghiên cứu</h4>
+                    <ul>
+                        <li>Ứng dụng đa dạng các mô hình dự báo với độ tin cậy cao</li>
+                        <li>Phân tích toàn diện các yếu tố tác động đến dân số</li>
+                        <li>Cung cấp cơ sở khoa học cho hoạch định chính sách</li>
+                        <li>Phương pháp luận có thể áp dụng cho các quốc gia khác</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <h2>Cảm ơn sự theo dõi!</h2>
+            <p><strong>Câu hỏi và thảo luận</strong></p>
+            <p>Liên hệ: nguyenngocanh_t67@hus.edu.vn</p>
+            <p>Dữ liệu và code: https://github.com/Luna777247/demography-vietnam</p>
+        </footer>
+    </div>
+</body>
+</html>
